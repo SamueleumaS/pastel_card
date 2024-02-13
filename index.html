@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Pastel Envelope</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+          background: linear-gradient(45deg, #ffcccb, #c2e9fb, #ffd3e3);
+
+            font-family: 'Poppins', sans-serif; /* Use Poppins font */
+        }
+
+        .envelope {
+            position: relative;
+            width: 90%; /* Adjusted width for smaller screens */
+            max-width: 400px;
+            height: 50vh; /* Adjusted height for smaller screens */
+            max-height: 300px;
+            background-color: #f8e6e6;
+            border: 2px solid #b5a7a7;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.5s ease;
+        }
+
+        .flap {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            width: 30%; /* Adjusted width for smaller screens */
+            height: 10%;
+            background-color: #f8e6e6;
+            border: 2px solid #b5a7a7;
+            border-radius: 0 0 15px 15px;
+            transform: translateX(-50%);
+        }
+
+        .heart-svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+
+        .letter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateY(100%);
+            opacity: 0;
+            background-color: transparent; /* Same background as envelope */
+            padding: 5%;
+            border-radius: 10px;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            max-height: calc(100% - 10%);
+            overflow-y: auto;
+            font-size: 14px; /* Adjusted font size for smaller screens */
+          text-align: center;
+            line-height: 2; /* Adjusted line height for better readability */
+      scrollbar-color: #ffb6c1 #f8e6e6;
+          scrollbar-width: thin;
+      }
+
+      .letter::-webkit-scrollbar {
+          width: 8px;
+      }
+
+      .letter::-webkit-scrollbar-thumb {
+          background-color: #ffb6c1;
+      }
+
+      .letter::-webkit-scrollbar-track {
+          background-color: #f8e6e6;
+      }
+        .envelope.opened {
+            transform: translateY(-10%);
+        }
+
+        .envelope.opened .letter {
+            transform: translate(-50%, -50%) translateY(0);
+            opacity: 1;
+        }
+
+        .envelope.opened .heart-svg {
+            display: none;
+        }
+      .heart-svg:hover {
+          animation: wiggle 0.5s ease infinite;
+      }
+
+      @keyframes wiggle {
+          0%, 100% {
+              transform: translate(-50%, -50%) rotate(0deg);
+          }
+          25% {
+              transform: translate(-50%, -50%) rotate(-10deg);
+          }
+          50% {
+              transform: translate(-50%, -50%) rotate(10deg);
+          }
+          75% {
+              transform: translate(-50%, -50%) rotate(-5deg);
+          }
+      }
+
+        /* Media queries for smaller screens */
+        @media screen and (max-width: 600px) {
+            .envelope {
+                width: 90%;
+                max-width: none;
+                height: 50vh;
+                max-height: none;
+            }
+
+            .flap {
+                top: -5%;
+                width: 40%; /* Adjusted width for smaller screens */
+            }
+
+            .letter {
+                padding: 8%;
+                max-height: calc(100% - 16%);
+                font-size: 12px; /* Further adjusted font size for smaller screens */
+            }
+
+            .envelope.opened {
+                transform: translateY(-5%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Load Poppins font -->
+
+<div class="envelope">
+    <div class="flap"></div>
+    <svg class="heart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80" fill="#ffb6c1">
+        <path d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.1 2 7.5 2 4.42 4.42 2 7.5 2 9.24 2 11.07 2.74 12 4.04 12.93 2.74 14.76 2 16.5 2 19.58 2 22 4.42 22 7.5c0 3.6-3.4 6.75-8.55 12.54L12 21.35z"/>
+    </svg>
+    <div class="letter">
+        <!-- 1000 words letter content... (You can replace this with your own content) -->
+        <!-- Repeat the paragraph below to reach the desired word count -->
+        <p>
+          Hey Lee [AKA: bubs, mamas, pro-artist, extra pro sleeper, bee, loonie **I really gotta start writing these nicknames down**],
+
+  I just wanted to drop a little note to say how much you mean to me. I wish there was more I could do for you and in time I will but seriously, you're like the best thing that's ever happened to my life.
+
+          Your vibe, your smile, and just having you around – it's like sunshine on a rainy day. You make the ordinary stuff special and the good times even better. Your presence is like my happy place, and I can't get enough of it.
+
+          And can we talk about the effort you put into us? From those random surprises to making me laugh when I'm in a funk – you've got a knack for making everything awesome. It's those litttle things that make me feel so damn lucky to have you.
+
+          I know life gets crazy, and we're both juggling a bunch of stuff. But, seriously, the fact that you always make time for us, even in the middle of the chaos, it means the world to me. You're like a superhero managing it all, and I appreciate it more than you know.
+
+          Our journey has been a wild ride, and I've learned so much from you {excluding the weird words you guys use. I very much like loonie and toonie tho}. You've made me a better person, and I love that we're growing together. **How's the weather down there btw** 
+
+          So, as we dive into Valentine's Day, I just want you to know that my feelings for you go way beyond all the hearts and flowers. You're not just my partner; you're my go-to, my rock, and my favorite person to chill with.
+
+          Here's to us – the laughs, the tears, and all the crazy moments in between. Happy Valentine's Day, Lee. Thanks for being the awesome human that you are.
+
+        I'd rather not get into the number of drafts this took to get right. So lemme get straight to the point. Will you be my valentine? Also, did I cook?
+          
+        </p>
+    </div>
+</div>
+
+
+<script>
+    const heart = document.querySelector('.heart-svg');
+    const envelope = document.querySelector('.envelope');
+    const letter = document.querySelector('.letter');
+
+    heart.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevents the click event from reaching the document click listener
+        envelope.classList.toggle('opened');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (envelope.classList.contains('opened') && !letter.contains(event.target)) {
+            envelope.classList.remove('opened');
+        }
+    });
+</script>
+
+</body>
+</html>
